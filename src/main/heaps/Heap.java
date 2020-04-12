@@ -7,4 +7,5 @@ public interface Heap<T> {
   void insert(T element);
   T extract();
   T peek();
+  void change(int idx, T newElement);
 }

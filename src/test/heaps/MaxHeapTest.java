@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import main.heaps.MaxHeap;
 
@@ -22,22 +23,35 @@ public class MaxHeapTest {
 
   @Test
   public void insert() {
-    ArrayList<Integer> myList = new ArrayList<>();
-    myList.add(1);
-    myList.add(2);
+    ArrayList<Integer> myList = getInitialList();
     MaxHeap<Integer> myHeap = new MaxHeap<>(myList);
-    myHeap.insert(3);
+    myHeap.insert(5);
     int firstElement = myHeap.peek();
-    assertEquals(3, firstElement);
+    assertEquals(5, firstElement);
   }
 
   @Test
   public void extract() {
+    ArrayList<Integer> myList = getInitialList();
+    MaxHeap<Integer> myHeap = new MaxHeap<>(myList);
+    int removed = myHeap.extract();
+    assertEquals(4, removed);
+  }
+
+  @Test
+  public void change() {
+    ArrayList<Integer> myList = getInitialList();
+    MaxHeap<Integer> myHeap = new MaxHeap<>(myList);
+    myHeap.change(3, 15);
+    assertTrue(myHeap.peek().equals(15));
+  }
+
+  private ArrayList<Integer> getInitialList() {
     ArrayList<Integer> myList = new ArrayList<>();
     myList.add(1);
     myList.add(2);
-    MaxHeap<Integer> myHeap = new MaxHeap<>(myList);
-    int removed = myHeap.extract();
-    assertEquals(2, removed);
+    myList.add(3);
+    myList.add(4);
+    return myList;
   }
 }

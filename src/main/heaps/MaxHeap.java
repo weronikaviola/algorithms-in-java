@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class MaxHeap<T extends Comparable> implements Heap<T>{
   ArrayList<T> array;
-  int size;
+  public int size;
 
   public MaxHeap(ArrayList<T> array) {
     this.array = array;
@@ -27,8 +27,10 @@ public class MaxHeap<T extends Comparable> implements Heap<T>{
 
   @Override
   public T extract() {
-    T element = array.remove(0);
+    swap(0, size - 1);
+    T element = array.remove(size - 1);
     size--;
+    maxHeapify(0);
     return element;
   }
 
@@ -37,14 +39,32 @@ public class MaxHeap<T extends Comparable> implements Heap<T>{
     return array.get(0);
   }
 
-  private void buildHeap() {
-    System.out.println("building");
-    for (int i = size/2 - 1; i >= 0; i--) {
-      maxHeapify(i);
+  @Override
+  public void change(int idx, T newElement) {
+    if (idx < 0 || idx >= size) return;
+
+    array.set(idx, newElement);
+
+    int parentIdx = HeapUtil.parent(idx);
+    int leftIdx = HeapUtil.left(idx);
+    int rightIdx= HeapUtil.right(idx);
+
+    int compareToParent = array.get(idx).compareTo(array.get(parentIdx));
+    if (parentIdx >= 0 && compareToParent > 0) {
+      siftUp(idx);
+    } else if (
+        (leftIdx < size && array.get(idx).compareTo(array.get(leftIdx)) < 0)
+        || (rightIdx < size && array.get(idx).compareTo(array.get(rightIdx)) < 0)
+    ) {
+      maxHeapify(idx);
     }
   }
 
-  private void maxHeapify(int idx) {
+  public void swap(int idx1, int idx2) {
+    Collections.swap(array, idx1, idx2);
+  }
+
+  public void maxHeapify(int idx) {
     int l = HeapUtil.left(idx);
     int r = HeapUtil.right(idx);
     int largest = idx;
@@ -66,11 +86,19 @@ public class MaxHeap<T extends Comparable> implements Heap<T>{
     }
   }
 
+  private void buildHeap() {
+    System.out.println("building");
+    for (int i = size/2 - 1; i >= 0; i--) {
+      maxHeapify(i);
+    }
+  }
+
   private void siftUp(int idx) {
     int parent = HeapUtil.parent(idx);
-    while (idx > 0 && array.get(parent).compareTo(array.get(idx)) < 0) {
+    while (parent >= 0 && array.get(parent).compareTo(array.get(idx)) < 0) {
       Collections.swap(array, idx, parent);
       idx = parent;
+      parent = HeapUtil.parent(idx);
     }
   }
 

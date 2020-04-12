@@ -1,19 +1,18 @@
 package test.sorting;
 
-import java.util.Arrays;
-
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
-import main.sorting.InsertionSort;
+import main.sorting.HeapSort;
 
-public class InsertionSortTest {
-  private InsertionSort insertionSort = new InsertionSort();
+import java.util.Arrays;
 
+public class HeapSortTest {
+  HeapSort heapSort = new HeapSort();
   @Test
   public void sort() {
-    int[] toSort = {1,4,5,7,2};
-    int[] result = insertionSort.sort(toSort);
+    final int[] toSort = {1,4,5,7,2};
+    int[] result = heapSort.sort(toSort);
     int[] anticipatedResult = new int[]{1,2,4,5,7};
     assertTrue(Arrays.equals(result, anticipatedResult));
   }
