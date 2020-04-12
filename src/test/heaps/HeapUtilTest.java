@@ -21,4 +21,12 @@ public class HeapUtilTest {
     int actualRight = HeapUtil.right(number);
     assertEquals(actualRight, expectedRight);
   }
+
+  @Test
+  public void parent() {
+    int index = 2;
+    int expectedParentIdx = 0;
+    int actualParentIdx = HeapUtil.parent(index);
+    assertEquals(actualParentIdx, expectedParentIdx);
+  }
 }

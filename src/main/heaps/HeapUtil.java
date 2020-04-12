@@ -8,4 +8,8 @@ public class HeapUtil {
   static public int right(int idx) {
     return idx * 2 + 2;
   }
+
+  static public int parent(int idx) {
+    return (idx - 1)/2;
+  }
 }
