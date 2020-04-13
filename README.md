@@ -9,6 +9,8 @@ please note that my experience with Java is limited. The examples of algorithms 
   🐈 HeapSort  
   🐈 InsertionSort  
   🐈 MergeSort  
+  🐈 QuickSort  
+  🐈 CountingSort
 
 ### PROBLEMS
 #### max subarray problem
