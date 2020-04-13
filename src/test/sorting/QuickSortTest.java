@@ -1,26 +1,28 @@
 package test.sorting;
 
+import java.util.Arrays;
+
+import main.sorting.QuickSort;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
-import main.sorting.HeapSort;
+import main.sorting.SortingClass;
 
-import java.util.Arrays;
+public class QuickSortTest {
+  SortingClass sort = new QuickSort();
 
-public class HeapSortTest {
-  HeapSort heapSort = new HeapSort();
   @Test
   public void sort() {
-    final int[] toSort = {1,4,5,7,2};
-    int[] result = heapSort.sort(toSort);
-    int[] anticipatedResult = new int[]{1,2,4,5,7};
+    int[] collection = {2,5,3,1,7,6,8,4,9,0};
+    int[] result = sort.sort(collection);
+    int[] anticipatedResult = new int[]{0,1,2,3,4,5,6,7,8,9};
     assertTrue(Arrays.equals(result, anticipatedResult));
   }
 
   @Test
   public void sortEmpty() {
     int[] collection = {};
-    int[] result = heapSort.sort(collection);
+    int[] result = sort.sort(collection);
     int[] anticipatedResult = new int[]{};
     assertTrue(Arrays.equals(result, anticipatedResult));
   }
@@ -28,7 +30,7 @@ public class HeapSortTest {
   @Test
   public void sortOne() {
     int[] collection = {1};
-    int[] result = heapSort.sort(collection);
+    int[] result = sort.sort(collection);
     int[] anticipatedResult = new int[]{1};
     assertTrue(Arrays.equals(result, anticipatedResult));
   }
