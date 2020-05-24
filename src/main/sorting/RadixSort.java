@@ -24,18 +24,7 @@ public class RadixSort extends Sort implements SortingClass {
   }
 
   private void sortByDigit(int digit, String[] array) {
-    Arrays.sort(array, new StringComparatorByDigit(digit));
-  }
-
-  public class StringComparatorByDigit implements Comparator<String> {
-    private int digit;
-
-    public StringComparatorByDigit(int digit) {
-      this.digit = digit;
-    }
-
-    @Override
-    public int compare(String o1, String o2) {
+    Arrays.sort(array, (o1, o2) -> {
       if (o1.length() > digit) {
         try {
           String char1 = o1.substring(digit, digit + 1);
@@ -46,6 +35,6 @@ public class RadixSort extends Sort implements SortingClass {
         }
       }
       return 0;
-    }
+    });
   }
 }
