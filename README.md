@@ -10,7 +10,8 @@ please note that my experience with Java is limited. The examples of algorithms 
   🐈 InsertionSort  
   🐈 MergeSort  
   🐈 QuickSort  
-  🐈 CountingSort
+  🐈 CountingSort  
+  🐈 RadixSort
 
 ### PROBLEMS
 #### max subarray problem
