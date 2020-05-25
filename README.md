@@ -2,8 +2,12 @@ please note that my experience with Java is limited. The examples of algorithms 
 
 ## algorithms-in-java
 
-### HEAPS
-  🐈 MaxHeap
+### Data structures
+#### HEAPS
+  🐈 MaxHeap  
+  🐈 MaxPriorityQueue  
+#### Stacks and Queues
+  🐈 Stack  
   
 ### SORTING
   🐈 HeapSort  
