@@ -2,7 +2,7 @@ package main.sorting;
 
 import java.util.ArrayList;
 
-import main.heaps.MaxHeap;
+import main.data_structures.heaps.MaxHeap;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

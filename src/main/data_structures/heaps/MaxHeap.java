@@ -1,4 +1,4 @@
-package main.heaps;
+package main.data_structures.heaps;
 
 import java.util.Collections;
 import java.util.ArrayList;
@@ -46,21 +46,26 @@ public class MaxHeap<T extends Comparable> implements Heap<T>{
     array.set(idx, newElement);
 
     int parentIdx = HeapUtil.parent(idx);
-    int leftIdx = HeapUtil.left(idx);
-    int rightIdx= HeapUtil.right(idx);
 
     int compareToParent = array.get(idx).compareTo(array.get(parentIdx));
     if (parentIdx >= 0 && compareToParent > 0) {
       siftUp(idx);
-    } else if (
-        (leftIdx < size && array.get(idx).compareTo(array.get(leftIdx)) < 0)
-        || (rightIdx < size && array.get(idx).compareTo(array.get(rightIdx)) < 0)
-    ) {
+    } else {
       maxHeapify(idx);
     }
   }
 
-  public void swap(int idx1, int idx2) {
+  @Override
+  public T getAtIdx(int idx) {
+    return array.get(idx);
+  }
+
+  @Override
+  public boolean isEmpty() {
+    return array.isEmpty();
+  }
+
+  private void swap(int idx1, int idx2) {
     Collections.swap(array, idx1, idx2);
   }
 
@@ -93,7 +98,7 @@ public class MaxHeap<T extends Comparable> implements Heap<T>{
     }
   }
 
-  private void siftUp(int idx) {
+  public void siftUp(int idx) {
     int parent = HeapUtil.parent(idx);
     while (parent >= 0 && array.get(parent).compareTo(array.get(idx)) < 0) {
       Collections.swap(array, idx, parent);
@@ -101,5 +106,4 @@ public class MaxHeap<T extends Comparable> implements Heap<T>{
       parent = HeapUtil.parent(idx);
     }
   }
-
 }

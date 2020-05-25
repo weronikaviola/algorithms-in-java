@@ -3,7 +3,7 @@ package test.heaps;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-import main.heaps.HeapUtil;
+import main.data_structures.heaps.HeapUtil;
 
 public class HeapUtilTest {
   @Test

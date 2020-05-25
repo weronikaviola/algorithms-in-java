@@ -1,4 +1,4 @@
-package main.heaps;
+package main.data_structures.heaps;
 
 public class HeapUtil {
   static public int left(int idx) {
