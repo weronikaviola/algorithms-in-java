@@ -1,4 +1,4 @@
-package test.heaps;
+package test.data_structures.heaps;
 
 import main.data_structures.heaps.PriorityQueueElement;
 import org.junit.Test;

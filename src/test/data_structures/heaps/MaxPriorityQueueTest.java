@@ -1,16 +1,10 @@
-package test.heaps;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Collectors;
+package test.data_structures.heaps;
 
 import main.data_structures.heaps.MaxPriorityQueue;
 import main.data_structures.heaps.PriorityQueueElement;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import main.data_structures.heaps.MaxHeap;
 
 public class MaxPriorityQueueTest {
   @Test

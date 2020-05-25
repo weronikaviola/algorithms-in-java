@@ -1,4 +1,4 @@
-package test.heaps;
+package test.data_structures.heaps;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

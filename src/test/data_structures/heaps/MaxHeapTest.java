@@ -1,4 +1,4 @@
-package test.heaps;
+package test.data_structures.heaps;
 
 import java.util.ArrayList;
 import java.util.Arrays;
