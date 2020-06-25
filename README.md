@@ -8,6 +8,7 @@ please note that my experience with Java is limited. The examples of algorithms 
   🐈 MaxPriorityQueue  
 #### Stacks and Queues
   🐈 Stack  
+  🐈 Queue  
   
 ### SORTING
   🐈 HeapSort  
