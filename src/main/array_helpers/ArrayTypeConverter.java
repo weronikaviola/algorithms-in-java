@@ -1,8 +1,6 @@
 package main.array_helpers;
 
 import java.util.Arrays;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class ArrayTypeConverter {
   public static String[] convertIntsToStrings(int[] array) {

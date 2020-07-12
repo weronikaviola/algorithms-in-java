@@ -11,7 +11,7 @@ public class HeapUtilTest {
     int number = 12;
     int expectedLeft = 25;
     int actualLeft = HeapUtil.left(number);
-    assertEquals(actualLeft, expectedLeft);
+    assertEquals(expectedLeft, actualLeft);
   }
 
   @Test
@@ -19,7 +19,7 @@ public class HeapUtilTest {
     int number = 29;
     int expectedRight = 60;
     int actualRight = HeapUtil.right(number);
-    assertEquals(actualRight, expectedRight);
+    assertEquals(expectedRight, actualRight);
   }
 
   @Test
@@ -27,6 +27,6 @@ public class HeapUtilTest {
     int index = 2;
     int expectedParentIdx = 0;
     int actualParentIdx = HeapUtil.parent(index);
-    assertEquals(actualParentIdx, expectedParentIdx);
+    assertEquals(expectedParentIdx, actualParentIdx);
   }
 }
