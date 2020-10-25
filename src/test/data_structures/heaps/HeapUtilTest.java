@@ -27,6 +27,6 @@ public class HeapUtilTest {
     int index = 2;
     int expectedParentIdx = 0;
     int actualParentIdx = HeapUtil.parent(index);
-    assertEquals(expectedParentIdx, actualParentIdx);
+    assertEquals(expectedParentIdx, actualParentIdx );
   }
 }
