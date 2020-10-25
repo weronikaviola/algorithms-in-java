@@ -1,5 +1,5 @@
 package main.data_structures.heaps;
 
-public interface PriorityQueue {
-  public abstract PriorityQueue insert(PriorityQueueElement element);
+abstract class PriorityQueue<T> {
+  public abstract PriorityQueue<T> insert(PriorityQueueElement<T> element);
 }

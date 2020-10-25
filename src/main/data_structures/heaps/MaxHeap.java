@@ -3,19 +3,18 @@ package main.data_structures.heaps;
 import java.util.Collections;
 import java.util.ArrayList;
 
-public class MaxHeap<T extends Comparable> implements Heap<T>{
+public class MaxHeap<T extends Comparable<T>> extends Heap<T>{
   ArrayList<T> array;
   public int size;
+
+  public ArrayList<T> getSorted() {
+    return array;
+  }
 
   public MaxHeap(ArrayList<T> array) {
     this.array = array;
     size = array.size();
     buildHeap();
-  }
-
-  @Override
-  public ArrayList<T> getQueue() {
-    return array;
   }
 
   @Override
@@ -65,10 +64,25 @@ public class MaxHeap<T extends Comparable> implements Heap<T>{
     return array.isEmpty();
   }
 
-  private void swap(int idx1, int idx2) {
-    Collections.swap(array, idx1, idx2);
+  @Override
+  public void siftUp(int idx) {
+    int parent = HeapUtil.parent(idx);
+    while (parent >= 0 && array.get(parent).compareTo(array.get(idx)) < 0) {
+      Collections.swap(array, idx, parent);
+      idx = parent;
+      parent = HeapUtil.parent(idx);
+    }
   }
 
+  /**
+   * Recursively compares the element with its children and swaps it if
+   * necessary in order to place it in the appropriate position.
+   *
+   * Swaps the element with its children until it satisfies the max heap
+   * property.
+   *
+   * @param idx index of the element to adjust
+   */
   public void maxHeapify(int idx) {
     int l = HeapUtil.left(idx);
     int r = HeapUtil.right(idx);
@@ -92,18 +106,12 @@ public class MaxHeap<T extends Comparable> implements Heap<T>{
   }
 
   private void buildHeap() {
-    System.out.println("building");
     for (int i = size/2 - 1; i >= 0; i--) {
       maxHeapify(i);
     }
   }
 
-  public void siftUp(int idx) {
-    int parent = HeapUtil.parent(idx);
-    while (parent >= 0 && array.get(parent).compareTo(array.get(idx)) < 0) {
-      Collections.swap(array, idx, parent);
-      idx = parent;
-      parent = HeapUtil.parent(idx);
-    }
+  private void swap(int idx1, int idx2) {
+    Collections.swap(array, idx1, idx2);
   }
 }
