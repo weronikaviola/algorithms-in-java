@@ -1,5 +1,3 @@
-please note that my experience with Java is limited. The examples of algorithms in this repo _will_ contain errors ;) 
-
 ## algorithms-in-java
 
 ### Data structures
@@ -22,3 +20,5 @@ please note that my experience with Java is limited. The examples of algorithms 
 #### max subarray problem
   🐈 divide-and-conquer  
   🐈 Kadane's algorithm  
+#### generating subsets
+  🐈 using binary counting method
