@@ -8,10 +8,10 @@ import java.util.HashSet;
  */
 
 abstract class SubsetGenerator<T> {
-  protected final ArrayList<T> set;
+  protected final ArrayList<T> setAsList;
 
   SubsetGenerator(HashSet<T> inputSet) {
-    set = new ArrayList<>(inputSet);
+    setAsList = new ArrayList<>(inputSet);
   }
 
   /**

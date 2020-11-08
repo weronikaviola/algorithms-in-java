@@ -1,10 +1,9 @@
 package main.sorting;
 
 import com.sun.jdi.InvalidTypeException;
-import main.array_helpers.ArrayTypeConverter;
+import main.utilities.array_helpers.ArrayTypeConverter;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class RadixSort extends Sort implements SortingClass {
   @Override

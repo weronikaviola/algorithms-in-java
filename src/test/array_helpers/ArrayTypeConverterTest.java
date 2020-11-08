@@ -1,6 +1,6 @@
 package test.array_helpers;
 
-import main.array_helpers.ArrayTypeConverter;
+import main.utilities.array_helpers.ArrayTypeConverter;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;

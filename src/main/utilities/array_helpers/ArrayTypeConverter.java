@@ -1,9 +1,6 @@
-package main.array_helpers;
+package main.utilities.array_helpers;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.toList;
 
 /**
  * A helper class used to convert arrays of values for the purposes of some

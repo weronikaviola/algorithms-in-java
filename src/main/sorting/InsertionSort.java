@@ -1,7 +1,7 @@
 package main.sorting;
 
 import com.sun.jdi.InvalidTypeException;
-import main.array_helpers.ArrayTypeConverter;
+import main.utilities.array_helpers.ArrayTypeConverter;
 
 public class InsertionSort extends Sort implements SortingClass {
 

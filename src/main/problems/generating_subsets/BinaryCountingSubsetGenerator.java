@@ -11,11 +11,11 @@ public class BinaryCountingSubsetGenerator<T> extends SubsetGenerator<T> {
   public HashSet<HashSet<T>> getPowerset() {
     HashSet<HashSet<T>> output = new HashSet<>();
 
-    for (int i = 0; i <= Math.pow(2, set.size()) - 1; i++) {
+    for (int i = 0; i <= Math.pow(2, setAsList.size()) - 1; i++) {
       output.add(generateSubset(Integer.toBinaryString(i)));
     }
 
-    output.add(new HashSet<>(set));
+    output.add(new HashSet<>(setAsList));
 
     return output;
   }
@@ -26,7 +26,7 @@ public class BinaryCountingSubsetGenerator<T> extends SubsetGenerator<T> {
 
     for (int i = 0; i <= binaryString.length(); i++) {
       if (binaryString.startsWith("1", stringLength - i)) {
-        subset.add(set.get(set.size() - i));
+        subset.add(setAsList.get(setAsList.size() - i));
       }
     }
 
