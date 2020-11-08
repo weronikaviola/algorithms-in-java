@@ -21,4 +21,5 @@
   🐈 divide-and-conquer  
   🐈 Kadane's algorithm  
 #### generating subsets
+  🐈 basic recursive method  
   🐈 using binary counting method
