@@ -1,7 +1,5 @@
 package main.sorting;
 
-import java.util.Collections;
-
 public class QuickSort implements SortingClass {
   @Override
   public int[] sort(int[] collection) {

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertArrayEquals;
 import main.sorting.InsertionSort;
 
 public class InsertionSortTest {
-  private InsertionSort insertionSort = new InsertionSort();
+  private final InsertionSort insertionSort = new InsertionSort();
 
   @Test
   public void sortIntegers() {

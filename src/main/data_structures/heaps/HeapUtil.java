@@ -28,6 +28,6 @@ public class HeapUtil {
    * @return index of the parent element
    */
   static public int parent(int idx) {
-    return (idx - 1)/2;
+    return (idx - 1) / 2;
   }
 }

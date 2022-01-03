@@ -1,7 +1,6 @@
 package main.problems.max_subarray;
 
 public class DivideAndConquerMethod implements MaxSubarray {
-  private final int SUM_RESULT_IDX = 2;
 
   @Override
   public int[] findMaxSubarray(int[] array) {
@@ -18,11 +17,12 @@ public class DivideAndConquerMethod implements MaxSubarray {
       int[] rightResult = findMaxSubarray(arr, mid + 1, high);
       int[] crossResult = findMaxCrossingSubarray(arr, low, mid, high);
 
-      if (leftResult[SUM_RESULT_IDX] >= rightResult[SUM_RESULT_IDX]
-          && leftResult[SUM_RESULT_IDX] >= crossResult[SUM_RESULT_IDX]) {
+      int sumResultIdx = 2;
+      if (leftResult[sumResultIdx] >= rightResult[sumResultIdx]
+          && leftResult[sumResultIdx] >= crossResult[sumResultIdx]) {
         return leftResult;
-      } else if (rightResult[SUM_RESULT_IDX] >= leftResult[SUM_RESULT_IDX]
-          && rightResult[SUM_RESULT_IDX] >= crossResult[SUM_RESULT_IDX]) {
+      } else if (rightResult[sumResultIdx] >= leftResult[sumResultIdx]
+          && rightResult[sumResultIdx] >= crossResult[sumResultIdx]) {
         return rightResult;
       } else {
         return crossResult;

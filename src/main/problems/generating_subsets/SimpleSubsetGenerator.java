@@ -3,6 +3,8 @@ package main.problems.generating_subsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class SimpleSubsetGenerator<T> extends SubsetGenerator<T> {
   public SimpleSubsetGenerator(HashSet<T> inputSet) {

@@ -1,15 +1,11 @@
 package main.data_structures.heaps;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * An abstract class defining a Heap holding elements of the specified type.
- *
- * @param <T> type of the elements
  */
 abstract class Heap<T extends Comparable<T>> {
-  ArrayList<T> array;
 
   /**
    * Returns a list of elements in sorted order specified by the implementation.
@@ -42,7 +38,7 @@ abstract class Heap<T extends Comparable<T>> {
   /**
    * Replaces the element at the specified index.
    *
-   * @param idx index
+   * @param idx        index
    * @param newElement element to insert
    */
   abstract public void change(int idx, T newElement);

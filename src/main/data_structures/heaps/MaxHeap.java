@@ -3,7 +3,7 @@ package main.data_structures.heaps;
 import java.util.Collections;
 import java.util.ArrayList;
 
-public class MaxHeap<T extends Comparable<T>> extends Heap<T>{
+public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
   ArrayList<T> array;
   public int size;
 
@@ -77,7 +77,7 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T>{
   /**
    * Recursively compares the element with its children and swaps it if
    * necessary in order to place it in the appropriate position.
-   *
+   * <p>
    * Swaps the element with its children until it satisfies the max heap
    * property.
    *
@@ -106,7 +106,7 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T>{
   }
 
   private void buildHeap() {
-    for (int i = size/2 - 1; i >= 0; i--) {
+    for (int i = size / 2 - 1; i >= 0; i--) {
       maxHeapify(i);
     }
   }

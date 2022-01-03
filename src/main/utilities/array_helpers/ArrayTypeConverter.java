@@ -81,7 +81,7 @@ public class ArrayTypeConverter {
    * {@link java.lang.Integer#parseInt(String)} method.
    *
    * @param array an array of Strings
-   * @return an array of int's
+   * @return an array of ints
    */
   public static int[] convertStringsToInts(String[] array) {
     return Arrays.stream(array).mapToInt(Integer::parseInt).toArray();

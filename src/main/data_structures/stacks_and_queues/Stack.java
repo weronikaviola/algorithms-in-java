@@ -3,9 +3,9 @@ package main.data_structures.stacks_and_queues;
 import java.util.ArrayList;
 
 public class Stack implements StackInterface {
-  private Object[] stack;
+  private final Object[] stack;
   private int currentPointer;
-  private int capacity;
+  private final int capacity;
 
   public Stack(int capacity) {
     stack = new Object[capacity];

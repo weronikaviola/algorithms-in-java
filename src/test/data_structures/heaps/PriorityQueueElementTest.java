@@ -9,7 +9,7 @@ public class PriorityQueueElementTest {
   @Test
   public void constructor() {
     String testString = "testString_1";
-    PriorityQueueElement element = new PriorityQueueElement(testString, 1);
+    PriorityQueueElement<String> element = new PriorityQueueElement<>(testString, 1);
     assertEquals(1, element.getKey());
     assertEquals(testString, element.getElement());
   }
@@ -17,7 +17,7 @@ public class PriorityQueueElementTest {
   @Test
   public void setters() {
     String testString = "testString_1";
-    PriorityQueueElement element = new PriorityQueueElement(testString, 1);
+    PriorityQueueElement<String> element = new PriorityQueueElement<>(testString, 1);
     element.setElement("testString_2");
     element.setKey(100);
     assertEquals(100, element.getKey());
@@ -28,16 +28,16 @@ public class PriorityQueueElementTest {
   public void compareTo_KeysAreTheSame() {
     String testString1 = "testString1";
     String testString2 = "testString2";
-    PriorityQueueElement element1 = new PriorityQueueElement(testString1, 1);
-    PriorityQueueElement element2 = new PriorityQueueElement(testString2, 1);
+    PriorityQueueElement<String> element1 = new PriorityQueueElement<>(testString1, 1);
+    PriorityQueueElement<String> element2 = new PriorityQueueElement<>(testString2, 1);
     assertEquals(0, element1.compareTo(element2));
   }
 
   @Test()
   public void compare_WrappedElementsAreTheSameButKeysAreDifferent() {
     String testString1 = "testString1";
-    PriorityQueueElement element1 = new PriorityQueueElement(testString1, 1);
-    PriorityQueueElement element2 = new PriorityQueueElement(testString1, 2);
+    PriorityQueueElement<String> element1 = new PriorityQueueElement<>(testString1, 1);
+    PriorityQueueElement<String> element2 = new PriorityQueueElement<>(testString1, 2);
     assertEquals(-1, element1.compareTo(element2));
   }
 }
